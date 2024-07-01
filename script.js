@@ -14,7 +14,7 @@ function ReverseString(str) {
 
     var reversed = "";
     for (var i = str.length; i >= 0; i--) {
-        reversed += str.charAt(i)
+        reversed = reversed + str.charAt(i)
 
     }
 
@@ -37,14 +37,12 @@ function Countcaracters(str) {
 function CapitalizeWords(str) {
 
     for (var i = 0; i < str.length; i++) {
-        if (str.charAt(i) = "") {
+        if (str.charAt(i) = " ") {
             result = upperCase(str.charAt(i + 1))
-
         }
-    }
+            }
+            return result ;
 }
-
-
 
 
 
@@ -82,8 +80,8 @@ function maximumarray(array) {
 
 function sumtableau(array) {
     var sum = 0;
-    for (let i = 0; i <= array.length; i ++) {
-        sum = array[i] + sum ; 
+    for (let i = 0; i <= array.length; i++) {
+        sum = array[i] + sum;
 
     }
     return sum
@@ -92,14 +90,13 @@ function sumtableau(array) {
 
 // Filter  array
 
-function filterarray(array) {
-    for (let i = 0; i <= array.length; i ++ ) {
+function filterarray(array,condition) {
+    for (let i = 0; i <= array.length; i++) {
 
         if (condition = true) {
 
             return array[i];
         }
-
 
     }
 
@@ -115,7 +112,7 @@ function filterarray(array) {
 
 function factorialnumber(num) {
     factorial = 1
-    for (let i = num; i>= 1; i-1 ) {
+    for (let i = num; i >= 1; i - 1) {
 
         factorial = factorial * i;
 
@@ -131,7 +128,7 @@ function Prime(number) {
         return false
     }
 
-    for (let i = 2; i < number; i ++ )
+    for (let i = 2; i < number; i++)
         if (number % i === 0) {
             return false
 
