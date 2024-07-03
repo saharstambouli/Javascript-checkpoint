@@ -1,24 +1,19 @@
-//Reverse String  option 1
-
-function ReverseString(str) {
-
-    let reversed = str.split('').reverse().join('');
-    console.log(reversed);
-
-}
 
 
 //Reverse String option 2
 
 function ReverseString(str) {
-
     var reversed = "";
-    for (var i = str.length; i >= 0; i--) {
+    for (var i = str.length - 1; i >= 0; i--) {
         reversed = reversed + str.charAt(i)
 
     }
 
+    return reversed;
+
 }
+
+
 // Count caracters  
 
 function Countcaracters(str) {
@@ -36,12 +31,13 @@ function Countcaracters(str) {
 
 function CapitalizeWords(str) {
 
-    for (var i = 0; i < str.length; i++) {
-        if (str.charAt(i) = " ") {
-            result = upperCase(str.charAt(i + 1))
+    str1 = upperCase(str.charAt(0))
+    for (var i = 1; i < str1.length; i++) {
+        if (str1.charAt(i) = " ") {
+            result = upperCase(str1.charAt(i + 1))
         }
-            }
-            return result ;
+    }
+    return result;
 }
 
 
@@ -51,36 +47,33 @@ function CapitalizeWords(str) {
 //Array functions
 
 // maximum and minimum aray
-function maximumarray(array) {
-    var maximum = array[0];
-    var minimum = array[0];
-    for (let i = 0; i <= array.length; i++) {
 
-        if (array[i] >= array[i + 1]) {
-            maximum = array[i];
-        }
+function minMax(arr) {
+    if (arr.length == 0) {
 
-        else {
-            maximum = array[i + 1];
-        }
-
-
-        if (array[i] <= array[i + 1]) {
-            minimum = array[i];
-        }
-        else {
-            maximum = array[i + 1]
-        }
-
+        return []
     }
+    var min = arr[0]
+    var max = arr[0]
+
+    for (i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i]
+        }
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+    return [min, max];
 }
+
 
 
 //sum of array
 
 function sumtableau(array) {
     var sum = 0;
-    for (let i = 0; i <= array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         sum = array[i] + sum;
 
     }
@@ -90,10 +83,10 @@ function sumtableau(array) {
 
 // Filter  array
 
-function filterarray(array,condition) {
-    for (let i = 0; i <= array.length; i++) {
+function filterarray(array, condition) {
+    for (let i = 0; i < array.length; i++) {
 
-        if (condition = true) {
+        if (condition === true) {
 
             return array[i];
         }
@@ -111,13 +104,13 @@ function filterarray(array,condition) {
 //factorial 
 
 function factorialnumber(num) {
-    factorial = 1
-    for (let i = num; i >= 1; i - 1) {
+    var factorial = 1
+    for (let i = num; i > 1; i--) {
 
         factorial = factorial * i;
 
     }
-    console.log('The factorial of ${num} is ${factorial}.');
+    return factorial
 }
 
 // Prime number
@@ -125,14 +118,16 @@ function factorialnumber(num) {
 function Prime(number) {
     if (number <= 1) {
 
-        return false
+        return false;
+    }
+    else {
+
+        for (let i = 2; i < number; i++)
+            if (number % i === 0) {
+                return false;
+            }
     }
 
-    for (let i = 2; i < number; i++)
-        if (number % i === 0) {
-            return false
-
-        }
     return true
 }
 
@@ -145,22 +140,20 @@ function fibonacci(number) {
         return true
     }
 
-    else {
+    else if (number > 1) {
 
         for (i = 0; i < number; i++) {
-            for (j = 1; j < number; j++) {
+            for (j = 1; j < number - 1; j++) {
                 if (number = i + j) {
-
                     return true
-
                 }
-
-                else return false
 
             }
         }
 
+
     }
+    return false
 }
 
 
