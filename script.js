@@ -1,6 +1,6 @@
 
 
-//Reverse String option 2
+//Reverse String 
 
 function ReverseString(str) {
     var reversed = "";
@@ -17,30 +17,34 @@ function ReverseString(str) {
 // Count caracters  
 
 function Countcaracters(str) {
+ var Total = 0 
 
-    if (str = "") {
-        return 0;
+    if (str === "") {
+       Total = 0 ;
     }
 
-    else return str.length;
-
+    else {
+        Total = str.length;
+    }
+   return Total ;
 }
 
+console.log (Countcaracters("sahar") )
 
 // Capitalize function 
 
 function CapitalizeWords(str) {
-
-    str1 = upperCase(str.charAt(0))
-    for (var i = 1; i < str1.length; i++) {
-        if (str1.charAt(i) = " ") {
-            result = upperCase(str1.charAt(i + 1))
+    var result = str.charAt(0).toUpperCase();
+    for (var i = 1; i < str.length; i++) {
+        if (str.charAt(i - 1) == " ") {
+            result += str.charAt(i).toUpperCase();
+        } else {
+            result += str.charAt(i);
         }
     }
     return result;
 }
-
-
+console.log(CapitalizeWords("hello world"))
 
 //   ***********************************************************//
 
@@ -67,7 +71,7 @@ function minMax(arr) {
     return [min, max];
 }
 
-
+console.log (minMax([1,3,5,0]))
 
 //sum of array
 
@@ -80,6 +84,8 @@ function sumtableau(array) {
     return sum
 
 }
+
+console.log (sumtableau([1,3,5,0]))
 
 // Filter  array
 
@@ -94,6 +100,9 @@ function filterarray(array, condition) {
     }
 
 }
+
+
+
 
 //   ***********************************************************//
 
@@ -113,6 +122,9 @@ function factorialnumber(num) {
     return factorial
 }
 
+
+console.log(factorialnumber(5))
+
 // Prime number
 
 function Prime(number) {
@@ -130,6 +142,8 @@ function Prime(number) {
 
     return true
 }
+
+console.log(Prime(3))
 
 //Fibonacci Sequence
 
@@ -156,6 +170,7 @@ function fibonacci(number) {
     return false
 }
 
+console.log (fibonacci(5))
 
 
 
